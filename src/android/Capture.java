@@ -295,7 +295,7 @@ public class Capture extends CordovaPlugin {
             !PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
         if(needExternalStoragePermission || (cameraPermissionInManifest && !PermissionHelper.hasPermission(this, Manifest.permission.CAMERA))) {
             if(needExternalStoragePermission && (cameraPermissionInManifest && !PermissionHelper.hasPermission(this, Manifest.permission.CAMERA))) {
-                PermissionHelper.requestPermission(this, req.requestCode, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA});
+                PermissionHelper.requestPermissions(this, req.requestCode, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA});
             } else if (cameraPermissionInManifest && !PermissionHelper.hasPermission(this, Manifest.permission.CAMERA)){
                 PermissionHelper.requestPermission(this, req.requestCode, Manifest.permission.CAMERA);
             } else {
